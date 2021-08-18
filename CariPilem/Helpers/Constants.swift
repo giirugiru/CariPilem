@@ -43,6 +43,7 @@ enum Endpoint {
   case genre
   case popularMoviesList
   case filteredMovieList
+  
   var urlString: String {
     switch self {
     case .genre:

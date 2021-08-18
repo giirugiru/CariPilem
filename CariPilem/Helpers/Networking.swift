@@ -17,6 +17,8 @@ class Networking: NetworkProtocol {
     let urlParameters = parameters?.queryString ?? ""
     guard let finalURL = URL(string: url + urlParameters) else { return }
     
+    print("Request URL: \(finalURL)")
+    
     URLSession.shared.dataTaskPublisher(for: finalURL)
       .map{ $0.data }
       .decode(type: T.self, decoder: JSONDecoder())
@@ -28,6 +30,7 @@ class Networking: NetworkProtocol {
         }
       }, receiveValue: { (resultArray) in
         completion(.success(resultArray))
+        //print("Result: \(resultArray)")
       }).store(in: &subscribers)
   }
 }

@@ -20,6 +20,7 @@
 		BAAB671C26CCF84900CC0C6C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB671B26CCF84900CC0C6C /* HomeViewController.swift */; };
 		BAAB671E26CD09C900CC0C6C /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB671D26CD09C900CC0C6C /* MovieListModel.swift */; };
 		BAAB672026CD0B7E00CC0C6C /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB671F26CD0B7E00CC0C6C /* MovieListViewModel.swift */; };
+		BAAB672726CD298B00CC0C6C /* GenreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAB672426CD262500CC0C6C /* GenreViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BAAB671B26CCF84900CC0C6C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BAAB671D26CD09C900CC0C6C /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
 		BAAB671F26CD0B7E00CC0C6C /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		BAAB672426CD262500CC0C6C /* GenreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				BAAB671B26CCF84900CC0C6C /* HomeViewController.swift */,
 				BAAB66FF26CCD6D900CC0C6C /* GenreViewController.swift */,
+				BAAB672426CD262500CC0C6C /* GenreViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAB672726CD298B00CC0C6C /* GenreViewController.xib in Resources */,
 				BAAB670826CCD6DC00CC0C6C /* LaunchScreen.storyboard in Resources */,
 				BAAB670526CCD6DC00CC0C6C /* Assets.xcassets in Resources */,
 				BAAB670326CCD6D900CC0C6C /* Main.storyboard in Resources */,

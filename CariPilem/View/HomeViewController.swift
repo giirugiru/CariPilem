@@ -11,10 +11,13 @@ import Combine
 class HomeViewController: UIViewController {
   
   @IBOutlet weak var movieTableView: UITableView!
+  @IBOutlet weak var genreTabButton: UIBarButtonItem!
   
   var movies: [MovieList] = []
   var movieListViewModel: MovieListViewModel!
   var page = 1
+  var genreId: Int?
+  var endpoint: Endpoint = .popularMoviesList
   
   private let networking = Networking()
   private var subscriber: AnyCancellable?
@@ -36,7 +39,7 @@ class HomeViewController: UIViewController {
   }
   
   private func fetchMovies(){
-    movieListViewModel.fetchMovieList(page: page, genreId: nil)
+    movieListViewModel.fetchMovieList(page: page, genreId: genreId)
   }
   
   private func observeViewModel(){
@@ -54,6 +57,13 @@ class HomeViewController: UIViewController {
     })
   }
   
+  @IBAction func genreButtonTapped(_ sender: UIBarButtonItem) {
+    let vc = GenreViewController(nibName: "GenreViewController", bundle: nil)
+    vc.delegate = self
+    self.navigationController?.present(vc, animated: true, completion: nil)
+  }
+  
+  
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -64,7 +74,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
     let movie = movies[indexPath.row]
-    cell.textLabel?.text = movie.originalTitle
+    cell.textLabel?.text = movie.title
     return cell
     
   }
@@ -72,9 +82,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if indexPath.row == movies.count-1 {
       page += 1
-      movieListViewModel.fetchMovieList(page: page, genreId: nil)
+      movieListViewModel.fetchMovieList(page: page, genreId: genreId)
       observeViewModel()
     }
+  }
+  
+}
+
+extension HomeViewController: GenreDelegate {
+  func genreSelected(id: Int?, endpoint: Endpoint) {
+    
+    page = 1
+    genreId = id
+    movies.removeAll()
+    
+    movieListViewModel = MovieListViewModel(networking: networking, endpoint: endpoint)
+    movieListViewModel.fetchMovieList(page: page, genreId: genreId)
+    observeViewModel()
+    
   }
   
 }
