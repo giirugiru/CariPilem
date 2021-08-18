@@ -11,7 +11,7 @@ import Combine
 class Networking: NetworkProtocol {
   
   private var subscribers = Set<AnyCancellable>()
-    
+  
   func fetchItems<T: Decodable>(url: String, parameters: [String: String]?, completion: @escaping (Result<T, Error>) -> Void) {
     
     let urlParameters = parameters?.queryString ?? ""
@@ -36,13 +36,14 @@ protocol NetworkProtocol {
   func fetchItems<T: Decodable>(url: String, parameters: [String: String]?, completion: @escaping (Result<T, Error>) -> Void)
 }
 
+// URL Get Method Parameter Parsing
 extension Dictionary {
-    var queryString: String {
-        var output: String = "?"
-        for (key,value) in self {
-            output +=  "\(key)=\(value)&"
-        }
-        output = String(output.dropLast())
-        return output
+  var queryString: String {
+    var output: String = "?"
+    for (key,value) in self {
+      output +=  "\(key)=\(value)&"
     }
+    output = String(output.dropLast())
+    return output
+  }
 }

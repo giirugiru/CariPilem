@@ -8,42 +8,49 @@
 import Foundation
 
 struct Constants {
-  static let BaseAPI = "https://api.themoviedb.org/3/"
   
+  // Creds
   struct APIKey {
     static let Key = "api_key"
     static let Value = "e7d22d38c7ac25f61485e43850ee10e8"
   }
   
+  // Endpoints & Path
+  struct APIPath {
+    static let BaseAPI = "https://api.themoviedb.org/3/"
+    static let movieGenre = BaseAPI + "genre/movie/list"
+    static let popularMovieList = BaseAPI + "movie/popular"
+    static let filteredMovieList = BaseAPI + "discover/movie"
+  }
+  
+  // Config & Param Keys
   struct Language {
     static let Key = "language"
     static let Value = "en-US"
   }
   
-  static let movieGenre = BaseAPI + "genre/movie/list"
+  struct Page {
+    static let Key = "page"
+  }
+  
+  struct Genre {
+    static let Key = "with_genres"
+  }
+  
 }
 
-//enum Language {
-//  case english
-////  case french
-////  case germany
-//  var value: String {
-//    switch self {
-//    case .english:
-//      return "en_US"
-//    }
-//  }
-//}
-
 enum Endpoint {
-    case genre
-    case commentsFetch
-    var urlString: String {
-        switch self {
-        case .genre:
-          return Constants.movieGenre
-        case .commentsFetch:
-          return "https://jsonplaceholder.typicode.com/comments"
-        }
+  case genre
+  case popularMoviesList
+  case filteredMovieList
+  var urlString: String {
+    switch self {
+    case .genre:
+      return Constants.APIPath.movieGenre
+    case .popularMoviesList:
+      return Constants.APIPath.popularMovieList
+    case .filteredMovieList:
+      return Constants.APIPath.filteredMovieList
     }
+  }
 }

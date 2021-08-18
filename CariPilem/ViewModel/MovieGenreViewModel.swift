@@ -31,8 +31,8 @@ class MovieGenreViewModel {
     ]
     networking.fetchItems(url: url, parameters: param) { [weak self] (result: Result<MovieGenreWelcome, Error>) in
       switch result {
-      case .success(let genres):
-        self?.movieGenreSubject.send(genres)
+      case .success(let resultWelcome):
+        self?.movieGenreSubject.send(resultWelcome)
       case .failure(let error):
         self?.movieGenreSubject.send(completion: .failure(error))
       }
