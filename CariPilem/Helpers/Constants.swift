@@ -37,21 +37,22 @@ struct Constants {
     static let Key = "with_genres"
   }
   
-}
-
-enum Endpoint {
-  case genre
-  case popularMoviesList
-  case filteredMovieList
-  
-  var urlString: String {
-    switch self {
-    case .genre:
-      return Constants.APIPath.movieGenre
-    case .popularMoviesList:
-      return Constants.APIPath.popularMovieList
-    case .filteredMovieList:
-      return Constants.APIPath.filteredMovieList
+  enum Endpoint {
+    case genre
+    case popularMoviesList
+    case filteredMovieList
+    
+    var urlString: String {
+      switch self {
+      case .genre:
+        return Constants.APIPath.movieGenre
+      case .popularMoviesList:
+        return Constants.APIPath.popularMovieList
+      case .filteredMovieList:
+        return Constants.APIPath.filteredMovieList
+      }
     }
   }
 }
+
+

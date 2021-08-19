@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
   var movieListViewModel: MovieListViewModel!
   var page = 1
   var genreId: Int?
-  var endpoint: Endpoint = .popularMoviesList
+  var endpoint: Constants.Endpoint = .popularMoviesList
   
   private let networking = Networking()
   private var subscriber: AnyCancellable?
@@ -25,13 +25,13 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    movieTableView.register(MovieTableViewCell.nib(), forCellReuseIdentifier: MovieTableViewCell.cellIdentifier)
     movieTableView.dataSource = self
     movieTableView.delegate = self
     
     setupViewModel()
     fetchMovies()
     observeViewModel()
-    
   }
   
   private func setupViewModel(){
@@ -62,8 +62,6 @@ class HomeViewController: UIViewController {
     vc.delegate = self
     self.navigationController?.present(vc, animated: true, completion: nil)
   }
-  
-  
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -72,11 +70,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-    let movie = movies[indexPath.row]
-    cell.textLabel?.text = movie.title
-    return cell
     
+//    let cell = tableView.dequeueReusableCell(withIdentifier: DashboardTableViewCell.cellIdentifier, for: indexPath) as! DashboardTableViewCell
+
+    let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellIdentifier, for: indexPath) as! MovieTableViewCell
+    let model = movies[indexPath.row]
+    cell.configure(with: model)
+    
+//    let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+//    let movie = movies[indexPath.row]
+//    cell.textLabel?.text = movie.title
+    return cell
   }
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -86,12 +90,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
       observeViewModel()
     }
   }
-  
 }
 
 extension HomeViewController: GenreDelegate {
-  func genreSelected(id: Int?, endpoint: Endpoint) {
-    
+  func genreSelected(id: Int?, endpoint: Constants.Endpoint) {
     page = 1
     genreId = id
     movies.removeAll()
@@ -99,7 +101,5 @@ extension HomeViewController: GenreDelegate {
     movieListViewModel = MovieListViewModel(networking: networking, endpoint: endpoint)
     movieListViewModel.fetchMovieList(page: page, genreId: genreId)
     observeViewModel()
-    
   }
-  
 }

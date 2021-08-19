@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 protocol GenreDelegate {
-  func genreSelected(id: Int?, endpoint: Endpoint)
+  func genreSelected(id: Int?, endpoint: Constants.Endpoint)
 }
 
 class GenreViewController: UIViewController {
@@ -17,7 +17,6 @@ class GenreViewController: UIViewController {
   @IBOutlet weak var genreTableView: UITableView!
   
   var specialCategory = ["Popular Movies"]
-  
   var genres: [MovieGenre] = []
   var genreViewModel: MovieGenreViewModel!
   var delegate: GenreDelegate?
@@ -58,7 +57,6 @@ class GenreViewController: UIViewController {
       }
     }
   }
-  
 }
 
 extension GenreViewController: UITableViewDelegate, UITableViewDataSource {

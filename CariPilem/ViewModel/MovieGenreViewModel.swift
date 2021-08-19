@@ -14,11 +14,11 @@ class MovieGenreViewModel {
   
   // Dependency Injection
   private let networking: NetworkProtocol
-  private let endpoint: Endpoint
+  private let endpoint: Constants.Endpoint
   
   var movieGenreSubject = PassthroughSubject<MovieGenreWelcome, Error>()
   
-  init(networking: NetworkProtocol, endpoint: Endpoint) {
+  init(networking: NetworkProtocol, endpoint: Constants.Endpoint) {
     self.networking = networking
     self.endpoint = endpoint
   }
