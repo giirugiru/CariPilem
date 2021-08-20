@@ -73,8 +73,18 @@ class MovieDetailViewController: UIViewController {
     titleLabel.text = model.title
     taglineLabel.text = model.tagline
     overviewLabel.text = model.overview
-
+    
     if let rating = model.voteAverage {
+      switch rating {
+      case ...5.0:
+        ratingLabel.textColor = .red
+      case 5.1...7.0:
+        ratingLabel.textColor = .orange
+      case 7.0...8.0:
+        ratingLabel.textColor = .yellow
+      default:
+        ratingLabel.textColor = .green
+      }
       ratingLabel.text = "\(rating)"
     }
     
@@ -82,5 +92,13 @@ class MovieDetailViewController: UIViewController {
       guard let imageURL = URL(string: Constants.APIPath.BaseImageURL + path) else { return }
       posterImage.kf.setImage(with: imageURL)
     }
+    if let genres = model.genres {
+      var genreCollection: [String] = []
+      for genre in genres {
+        genreCollection.append(genre.name)
+      }
+      genreLabel.text = genreCollection.joined(separator: ", ")
+    }
+    
   }
 }

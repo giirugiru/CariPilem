@@ -51,7 +51,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQD-BV-6KF">
                                                                     <rect key="frame" x="0.0" y="0.0" width="323" height="36"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -60,7 +60,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="1e9-GE-4Ax"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>

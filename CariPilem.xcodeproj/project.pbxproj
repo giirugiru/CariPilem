@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		673D6F0BF824449DD80D5470 /* Pods_CariPilem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90BAFB86FFD59BED85008FB /* Pods_CariPilem.framework */; };
-		BA079E3526CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA079E3326CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift */; };
-		BA079E3626CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA079E3426CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib */; };
 		BAAB66FC26CCD6D900CC0C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FB26CCD6D900CC0C6C /* AppDelegate.swift */; };
 		BAAB66FE26CCD6D900CC0C6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FD26CCD6D900CC0C6C /* SceneDelegate.swift */; };
 		BAAB670026CCD6D900CC0C6C /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FF26CCD6D900CC0C6C /* GenreViewController.swift */; };
@@ -34,8 +32,6 @@
 
 /* Begin PBXFileReference section */
 		A3D75F49E46A0AEFD6BCEC58 /* Pods-CariPilem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CariPilem.debug.xcconfig"; path = "Target Support Files/Pods-CariPilem/Pods-CariPilem.debug.xcconfig"; sourceTree = "<group>"; };
-		BA079E3326CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuTableViewCell.swift; sourceTree = "<group>"; };
-		BA079E3426CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMenuTableViewCell.xib; sourceTree = "<group>"; };
 		BAAB66F826CCD6D900CC0C6C /* CariPilem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CariPilem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAAB66FB26CCD6D900CC0C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAAB66FD26CCD6D900CC0C6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,20 +108,10 @@
 		BA079E3926CF9F00006E1EE2 /* Movie Detail */ = {
 			isa = PBXGroup;
 			children = (
-				BA079E3A26CF9F0C006E1EE2 /* Cell */,
 				BAAB672D26CE96F400CC0C6C /* MovieDetailViewController.swift */,
 				BAAB672E26CE96F400CC0C6C /* MovieDetailViewController.xib */,
 			);
 			path = "Movie Detail";
-			sourceTree = "<group>";
-		};
-		BA079E3A26CF9F0C006E1EE2 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				BA079E3326CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift */,
-				BA079E3426CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		BAAB66EF26CCD6D900CC0C6C = {
@@ -275,7 +261,6 @@
 				BAAB672C26CE259100CC0C6C /* MovieTableViewCell.xib in Resources */,
 				BAAB670826CCD6DC00CC0C6C /* LaunchScreen.storyboard in Resources */,
 				BAAB670526CCD6DC00CC0C6C /* Assets.xcassets in Resources */,
-				BA079E3626CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib in Resources */,
 				BAAB670326CCD6D900CC0C6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +321,6 @@
 				BAAB672F26CE96F400CC0C6C /* MovieDetailViewController.swift in Sources */,
 				BAAB673226CF8C8500CC0C6C /* MovieDetailViewModel.swift in Sources */,
 				BAAB671C26CCF84900CC0C6C /* HomeViewController.swift in Sources */,
-				BA079E3526CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift in Sources */,
 				BAAB66FE26CCD6D900CC0C6C /* SceneDelegate.swift in Sources */,
 				BAAB671026CCDB3100CC0C6C /* Networking.swift in Sources */,
 				BAAB671526CCDE1300CC0C6C /* Constants.swift in Sources */,

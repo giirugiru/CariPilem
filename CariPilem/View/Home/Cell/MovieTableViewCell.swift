@@ -34,6 +34,16 @@ class MovieTableViewCell: UITableViewCell {
     releaseDateLabel.text = model.releaseDate
     
     if let rating = model.voteAverage {
+      switch rating {
+      case ...5.0:
+        ratingLabel.textColor = .red
+      case 5.1...7.0:
+        ratingLabel.textColor = .orange
+      case 7.0...8.0:
+        ratingLabel.textColor = .yellow
+      default:
+        ratingLabel.textColor = .green
+      }
       ratingLabel.text = "\(rating)/10"
     }
     
