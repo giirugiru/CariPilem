@@ -57,8 +57,9 @@ class MovieDetailViewController: UIViewController {
     detailTableView.register(DetailMenuTableViewCell.nib(), forCellReuseIdentifier: DetailMenuTableViewCell.cellIdentifier)
     detailTableView.delegate = self
     detailTableView.dataSource = self
-    detailTableView.rowHeight = UITableView.automaticDimension
-    detailTableView.estimatedRowHeight = 44.0
+    detailTableView.isScrollEnabled = false
+    //detailTableView.rowHeight = UITableView.automaticDimension
+    //detailTableView.estimatedRowHeight = 44.0
   }
   
   private func fetchMovie(){
@@ -98,10 +99,6 @@ class MovieDetailViewController: UIViewController {
 }
 
 extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource {
-  
-//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//    return 150
-//  }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return menuDetail.count
