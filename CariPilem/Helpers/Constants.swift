@@ -23,6 +23,8 @@ struct Constants {
     static let popularMovieList = BaseAPI + "movie/popular"
     static let filteredMovieList = BaseAPI + "discover/movie"
     static let movieDetail = BaseAPI + "movie"
+    static let movieReview = BaseAPI + "movie/$$$/reviews"
+    static let movieTrailer = BaseAPI + "movie/$$$/videos"
   }
   
   // Config & Param Keys
@@ -44,6 +46,8 @@ struct Constants {
     case popularMoviesList
     case filteredMovieList
     case movieDetail
+    case movieReview
+    case movieTrailer
     
     var urlString: String {
       switch self {
@@ -55,6 +59,10 @@ struct Constants {
         return Constants.APIPath.filteredMovieList
       case .movieDetail:
         return Constants.APIPath.movieDetail
+      case .movieReview:
+        return Constants.APIPath.movieReview
+      case .movieTrailer:
+        return Constants.APIPath.movieTrailer
       }
     }
   }

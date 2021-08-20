@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GenreViewController" customModule="CariPilem" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewViewController" customModule="CariPilem" customModuleProvider="target">
             <connections>
-                <outlet property="genreTableView" destination="hWw-ke-Mvd" id="5bx-DW-keo"/>
+                <outlet property="reviewTableView" destination="HfH-cX-npT" id="mor-43-ABg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,19 +19,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-ke-Mvd">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HfH-cX-npT">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hWw-ke-Mvd" secondAttribute="bottom" id="3TM-cq-txT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hWw-ke-Mvd" secondAttribute="trailing" id="CCK-0b-lvh"/>
-                <constraint firstItem="hWw-ke-Mvd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cLu-vR-ZgC"/>
-                <constraint firstItem="hWw-ke-Mvd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pao-wQ-xW4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HfH-cX-npT" secondAttribute="bottom" id="00z-yW-r0o"/>
+                <constraint firstItem="HfH-cX-npT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6AV-Yp-sHg"/>
+                <constraint firstItem="HfH-cX-npT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dgP-2W-ord"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HfH-cX-npT" secondAttribute="trailing" id="u8p-sy-5MD"/>
             </constraints>
-            <point key="canvasLocation" x="74" y="65"/>
+            <point key="canvasLocation" x="90" y="48"/>
         </view>
     </objects>
     <resources>

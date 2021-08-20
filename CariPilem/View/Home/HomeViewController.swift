@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
   var movies: [MovieList] = []
   var movieListViewModel: MovieListViewModel!
   var page = 1
+  var maxPage: Int?
   var genreId: Int?
   var genreValue: String = "Popular Movies"
   var endpoint: Constants.Endpoint = .popularMoviesList
@@ -56,6 +57,7 @@ class HomeViewController: UIViewController {
       }
     }, receiveValue: { (resultWelcome) in
       DispatchQueue.main.async {
+        self.maxPage = resultWelcome.totalPages
         self.movies.append(contentsOf: resultWelcome.results)
         self.movieTableView.reloadData()
       }
@@ -73,8 +75,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let headerView = view as? UITableViewHeaderFooterView {
-      headerView.contentView.backgroundColor = .black
-      headerView.textLabel?.textColor = .white
       headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
     }
   }
@@ -93,8 +93,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if indexPath.row == movies.count-1 {
       page += 1
-      movieListViewModel.fetchMovieList(page: page, genreId: genreId)
-      observeViewModel()
+      if let max = maxPage {
+        if page < max {
+          movieListViewModel.fetchMovieList(page: page, genreId: genreId)
+          observeViewModel()
+        }
+      }
     }
   }
   

@@ -77,8 +77,6 @@ extension GenreViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-    cell.backgroundColor = .black
-    cell.textLabel?.textColor = .white
     switch indexPath.section {
     case 0:
       cell.textLabel?.text = specialCategory[indexPath.row]
