@@ -71,6 +71,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    if let headerView = view as? UITableViewHeaderFooterView {
+      headerView.contentView.backgroundColor = .black
+      headerView.textLabel?.textColor = .white
+      headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+    }
+  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return movies.count
   }

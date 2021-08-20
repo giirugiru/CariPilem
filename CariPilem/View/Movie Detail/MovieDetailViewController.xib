@@ -10,9 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailViewController" customModule="CariPilem" customModuleProvider="target">
             <connections>
-                <outlet property="detailTableHeight" destination="GwL-eT-9PW" id="hig-57-P8l"/>
-                <outlet property="detailTableView" destination="sFm-y3-VOr" id="IWs-wx-13o"/>
                 <outlet property="genreLabel" destination="Gfd-fa-FVp" id="TCb-YQ-evv"/>
+                <outlet property="overviewLabel" destination="fCJ-Yl-qgn" id="nAB-tv-ApW"/>
                 <outlet property="posterImage" destination="lJU-Fs-bKF" id="FBL-Po-Qcc"/>
                 <outlet property="ratingLabel" destination="eMA-9s-wec" id="HkD-FL-XCo"/>
                 <outlet property="scrollView" destination="pf6-2O-2Ci" id="IsS-aK-Ipi"/>
@@ -29,8 +28,8 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-2O-2Ci">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3AM-jt-iK9">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1121"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="3AM-jt-iK9">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="870"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgY-Xu-2Mj">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
@@ -91,7 +90,6 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="0ug-nb-WXD" secondAttribute="bottom" id="AzC-N9-jTZ"/>
                                         <constraint firstItem="lJU-Fs-bKF" firstAttribute="top" secondItem="FgY-Xu-2Mj" secondAttribute="top" id="Shp-eV-r94"/>
@@ -102,13 +100,54 @@
                                         <constraint firstAttribute="trailing" secondItem="0ug-nb-WXD" secondAttribute="trailing" id="vDy-SN-MlF"/>
                                     </constraints>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sFm-y3-VOr">
-                                    <rect key="frame" x="0.0" y="621" width="414" height="500"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ru-WY-Jhr">
+                                    <rect key="frame" x="0.0" y="628" width="414" height="128"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="haN-sA-Uuf">
+                                            <rect key="frame" x="10" y="10" width="394" height="108"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaC-UX-L0b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="83.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCJ-Yl-qgn">
+                                                    <rect key="frame" x="0.0" y="87.5" width="394" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="500" id="GwL-eT-9PW"/>
+                                        <constraint firstItem="haN-sA-Uuf" firstAttribute="leading" secondItem="6ru-WY-Jhr" secondAttribute="leading" constant="10" id="Le2-bg-590"/>
+                                        <constraint firstItem="haN-sA-Uuf" firstAttribute="top" secondItem="6ru-WY-Jhr" secondAttribute="top" constant="10" id="ZcD-ra-gYg"/>
+                                        <constraint firstAttribute="bottom" secondItem="haN-sA-Uuf" secondAttribute="bottom" constant="10" id="ka4-j8-p7S"/>
+                                        <constraint firstAttribute="trailing" secondItem="haN-sA-Uuf" secondAttribute="trailing" constant="10" id="vch-9p-kaA"/>
                                     </constraints>
-                                </tableView>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf9-6T-4IT">
+                                    <rect key="frame" x="0.0" y="763" width="414" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="VgE-4f-g4c"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <state key="normal" title="Reviews">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-yl-did">
+                                    <rect key="frame" x="0.0" y="820" width="414" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="f1O-lJ-q9n"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <state key="normal" title="Watch Trailer">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
                             </subviews>
                         </stackView>
                     </subviews>
@@ -122,7 +161,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="pf6-2O-2Ci" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CPh-vS-NYA"/>
                 <constraint firstItem="pf6-2O-2Ci" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PNp-ZF-9kK"/>
@@ -135,9 +174,6 @@
     <resources>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

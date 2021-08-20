@@ -17,8 +17,7 @@ class MovieDetailViewController: UIViewController {
   @IBOutlet weak var ratingLabel: UILabel!
   @IBOutlet weak var taglineLabel: UILabel!
   @IBOutlet weak var genreLabel: UILabel!
-  @IBOutlet weak var detailTableView: UITableView!
-  @IBOutlet weak var detailTableHeight: NSLayoutConstraint!
+  @IBOutlet weak var overviewLabel: UILabel!
   
   private var menuDetail = ["Summary", "View Trailer", "View Rating"]
   private let networking = Networking()
@@ -30,7 +29,6 @@ class MovieDetailViewController: UIViewController {
     didSet {
       if let data = movie {
         layoutView(model: data)
-        detailTableView.reloadData()
       }
     }
   }
@@ -40,26 +38,15 @@ class MovieDetailViewController: UIViewController {
     setupViewModel()
     fetchMovie()
     observeViewModel()
-    setupTable()
   }
   
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
     self.scrollView.layoutIfNeeded()
-    self.detailTableHeight.constant = self.detailTableView.contentSize.height
   }
   
   private func setupViewModel(){
     movieDetailViewModel = MovieDetailViewModel(networking: networking, endpoint: .movieDetail)
-  }
-  
-  private func setupTable(){
-    detailTableView.register(DetailMenuTableViewCell.nib(), forCellReuseIdentifier: DetailMenuTableViewCell.cellIdentifier)
-    detailTableView.delegate = self
-    detailTableView.dataSource = self
-    detailTableView.isScrollEnabled = false
-    //detailTableView.rowHeight = UITableView.automaticDimension
-    //detailTableView.estimatedRowHeight = 44.0
   }
   
   private func fetchMovie(){
@@ -78,7 +65,6 @@ class MovieDetailViewController: UIViewController {
     }, receiveValue: { (resultWelcome) in
       DispatchQueue.main.async {
         self.movie = resultWelcome
-        self.detailTableView.reloadData()
       }
     })
   }
@@ -86,6 +72,7 @@ class MovieDetailViewController: UIViewController {
   private func layoutView(model: MovieDetailWelcome){
     titleLabel.text = model.title
     taglineLabel.text = model.tagline
+    overviewLabel.text = model.overview
 
     if let rating = model.voteAverage {
       ratingLabel.text = "\(rating)"
@@ -95,27 +82,5 @@ class MovieDetailViewController: UIViewController {
       guard let imageURL = URL(string: Constants.APIPath.BaseImageURL + path) else { return }
       posterImage.kf.setImage(with: imageURL)
     }
-  }
-}
-
-extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource {
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return menuDetail.count
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: DetailMenuTableViewCell.cellIdentifier, for: indexPath) as! DetailMenuTableViewCell
-    cell.menuTitleLabel.text = menuDetail[indexPath.row]
-    switch indexPath.row {
-    case 0:
-      cell.subtitleLabel.isHidden = false
-      cell.selectionStyle = .none
-      cell.subtitleLabel.text = movie?.overview
-    default:
-      cell.subtitleLabel.isHidden = true
-      return cell
-    }
-    return cell
   }
 }
