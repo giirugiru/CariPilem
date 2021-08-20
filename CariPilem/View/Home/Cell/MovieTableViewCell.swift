@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieTableViewCell: UITableViewCell {
   
@@ -22,7 +23,6 @@ class MovieTableViewCell: UITableViewCell {
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-    
   }
   
   static func nib() -> UINib {
@@ -35,6 +35,11 @@ class MovieTableViewCell: UITableViewCell {
     
     if let rating = model.voteAverage {
       ratingLabel.text = "\(rating)/10"
+    }
+    
+    if let path = model.posterPath {
+      guard let imageURL = URL(string: Constants.APIPath.BaseImageURL + path) else { return }
+      posterImage.kf.setImage(with: imageURL)
     }
     
   }

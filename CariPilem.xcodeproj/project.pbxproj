@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		673D6F0BF824449DD80D5470 /* Pods_CariPilem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90BAFB86FFD59BED85008FB /* Pods_CariPilem.framework */; };
+		BA079E3526CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA079E3326CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift */; };
+		BA079E3626CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA079E3426CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib */; };
 		BAAB66FC26CCD6D900CC0C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FB26CCD6D900CC0C6C /* AppDelegate.swift */; };
 		BAAB66FE26CCD6D900CC0C6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FD26CCD6D900CC0C6C /* SceneDelegate.swift */; };
 		BAAB670026CCD6D900CC0C6C /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FF26CCD6D900CC0C6C /* GenreViewController.swift */; };
@@ -23,9 +26,16 @@
 		BAAB672726CD298B00CC0C6C /* GenreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAB672426CD262500CC0C6C /* GenreViewController.xib */; };
 		BAAB672B26CE259100CC0C6C /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB672926CE259100CC0C6C /* MovieTableViewCell.swift */; };
 		BAAB672C26CE259100CC0C6C /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAB672A26CE259100CC0C6C /* MovieTableViewCell.xib */; };
+		BAAB672F26CE96F400CC0C6C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB672D26CE96F400CC0C6C /* MovieDetailViewController.swift */; };
+		BAAB673026CE96F400CC0C6C /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAB672E26CE96F400CC0C6C /* MovieDetailViewController.xib */; };
+		BAAB673226CF8C8500CC0C6C /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB673126CF8C8500CC0C6C /* MovieDetailViewModel.swift */; };
+		BAAB673426CF8CCA00CC0C6C /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB673326CF8CCA00CC0C6C /* MovieDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3D75F49E46A0AEFD6BCEC58 /* Pods-CariPilem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CariPilem.debug.xcconfig"; path = "Target Support Files/Pods-CariPilem/Pods-CariPilem.debug.xcconfig"; sourceTree = "<group>"; };
+		BA079E3326CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuTableViewCell.swift; sourceTree = "<group>"; };
+		BA079E3426CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMenuTableViewCell.xib; sourceTree = "<group>"; };
 		BAAB66F826CCD6D900CC0C6C /* CariPilem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CariPilem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAAB66FB26CCD6D900CC0C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAAB66FD26CCD6D900CC0C6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +54,12 @@
 		BAAB672426CD262500CC0C6C /* GenreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreViewController.xib; sourceTree = "<group>"; };
 		BAAB672926CE259100CC0C6C /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		BAAB672A26CE259100CC0C6C /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		BAAB672D26CE96F400CC0C6C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		BAAB672E26CE96F400CC0C6C /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		BAAB673126CF8C8500CC0C6C /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		BAAB673326CF8CCA00CC0C6C /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
+		C90BAFB86FFD59BED85008FB /* Pods_CariPilem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CariPilem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA8580E5646EEABA6F864381 /* Pods-CariPilem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CariPilem.release.xcconfig"; path = "Target Support Files/Pods-CariPilem/Pods-CariPilem.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +67,74 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673D6F0BF824449DD80D5470 /* Pods_CariPilem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57632F2F2F6E80469571BF8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C90BAFB86FFD59BED85008FB /* Pods_CariPilem.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6F9338D873B927AEBBC0FAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3D75F49E46A0AEFD6BCEC58 /* Pods-CariPilem.debug.xcconfig */,
+				DA8580E5646EEABA6F864381 /* Pods-CariPilem.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA079E3726CF9EE0006E1EE2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BAAB672826CE257C00CC0C6C /* Cell */,
+				BAAB671B26CCF84900CC0C6C /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BA079E3826CF9EF4006E1EE2 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				BAAB66FF26CCD6D900CC0C6C /* GenreViewController.swift */,
+				BAAB672426CD262500CC0C6C /* GenreViewController.xib */,
+			);
+			path = Genre;
+			sourceTree = "<group>";
+		};
+		BA079E3926CF9F00006E1EE2 /* Movie Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BA079E3A26CF9F0C006E1EE2 /* Cell */,
+				BAAB672D26CE96F400CC0C6C /* MovieDetailViewController.swift */,
+				BAAB672E26CE96F400CC0C6C /* MovieDetailViewController.xib */,
+			);
+			path = "Movie Detail";
+			sourceTree = "<group>";
+		};
+		BA079E3A26CF9F0C006E1EE2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BA079E3326CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift */,
+				BA079E3426CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BAAB66EF26CCD6D900CC0C6C = {
 			isa = PBXGroup;
 			children = (
 				BAAB66FA26CCD6D900CC0C6C /* CariPilem */,
 				BAAB66F926CCD6D900CC0C6C /* Products */,
+				A6F9338D873B927AEBBC0FAA /* Pods */,
+				57632F2F2F6E80469571BF8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +168,7 @@
 			children = (
 				BAAB671226CCDD8B00CC0C6C /* MovieGenreViewModel.swift */,
 				BAAB671F26CD0B7E00CC0C6C /* MovieListViewModel.swift */,
+				BAAB673126CF8C8500CC0C6C /* MovieDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,6 +187,7 @@
 			children = (
 				BAAB671826CCDE9D00CC0C6C /* MovieGenreModel.swift */,
 				BAAB671D26CD09C900CC0C6C /* MovieListModel.swift */,
+				BAAB673326CF8CCA00CC0C6C /* MovieDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,10 +195,9 @@
 		BAAB671A26CCF26600CC0C6C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BAAB672826CE257C00CC0C6C /* Cell */,
-				BAAB671B26CCF84900CC0C6C /* HomeViewController.swift */,
-				BAAB66FF26CCD6D900CC0C6C /* GenreViewController.swift */,
-				BAAB672426CD262500CC0C6C /* GenreViewController.xib */,
+				BA079E3726CF9EE0006E1EE2 /* Home */,
+				BA079E3826CF9EF4006E1EE2 /* Genre */,
+				BA079E3926CF9F00006E1EE2 /* Movie Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAAB670C26CCD6DC00CC0C6C /* Build configuration list for PBXNativeTarget "CariPilem" */;
 			buildPhases = (
+				CCF6C0F1ABEBCCEDB9105786 /* [CP] Check Pods Manifest.lock */,
 				BAAB66F426CCD6D900CC0C6C /* Sources */,
 				BAAB66F526CCD6D900CC0C6C /* Frameworks */,
 				BAAB66F626CCD6D900CC0C6C /* Resources */,
+				36B7B3AA6D55A3F0B252EB30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,15 +270,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAB673026CE96F400CC0C6C /* MovieDetailViewController.xib in Resources */,
 				BAAB672726CD298B00CC0C6C /* GenreViewController.xib in Resources */,
 				BAAB672C26CE259100CC0C6C /* MovieTableViewCell.xib in Resources */,
 				BAAB670826CCD6DC00CC0C6C /* LaunchScreen.storyboard in Resources */,
 				BAAB670526CCD6DC00CC0C6C /* Assets.xcassets in Resources */,
+				BA079E3626CF9ECF006E1EE2 /* DetailMenuTableViewCell.xib in Resources */,
 				BAAB670326CCD6D900CC0C6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36B7B3AA6D55A3F0B252EB30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CariPilem/Pods-CariPilem-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CariPilem/Pods-CariPilem-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CariPilem/Pods-CariPilem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCF6C0F1ABEBCCEDB9105786 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CariPilem-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BAAB66F426CCD6D900CC0C6C /* Sources */ = {
@@ -213,13 +333,17 @@
 				BAAB670026CCD6D900CC0C6C /* GenreViewController.swift in Sources */,
 				BAAB66FC26CCD6D900CC0C6C /* AppDelegate.swift in Sources */,
 				BAAB671326CCDD8B00CC0C6C /* MovieGenreViewModel.swift in Sources */,
+				BAAB672F26CE96F400CC0C6C /* MovieDetailViewController.swift in Sources */,
+				BAAB673226CF8C8500CC0C6C /* MovieDetailViewModel.swift in Sources */,
 				BAAB671C26CCF84900CC0C6C /* HomeViewController.swift in Sources */,
+				BA079E3526CF9ECF006E1EE2 /* DetailMenuTableViewCell.swift in Sources */,
 				BAAB66FE26CCD6D900CC0C6C /* SceneDelegate.swift in Sources */,
 				BAAB671026CCDB3100CC0C6C /* Networking.swift in Sources */,
 				BAAB671526CCDE1300CC0C6C /* Constants.swift in Sources */,
 				BAAB671926CCDE9D00CC0C6C /* MovieGenreModel.swift in Sources */,
 				BAAB672B26CE259100CC0C6C /* MovieTableViewCell.swift in Sources */,
 				BAAB672026CD0B7E00CC0C6C /* MovieListViewModel.swift in Sources */,
+				BAAB673426CF8CCA00CC0C6C /* MovieDetailModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +487,7 @@
 		};
 		BAAB670D26CCD6DC00CC0C6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3D75F49E46A0AEFD6BCEC58 /* Pods-CariPilem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +507,7 @@
 		};
 		BAAB670E26CCD6DC00CC0C6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA8580E5646EEABA6F864381 /* Pods-CariPilem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

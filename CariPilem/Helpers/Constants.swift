@@ -18,9 +18,11 @@ struct Constants {
   // Endpoints & Path
   struct APIPath {
     static let BaseAPI = "https://api.themoviedb.org/3/"
+    static let BaseImageURL = "https://image.tmdb.org/t/p/w500"
     static let movieGenre = BaseAPI + "genre/movie/list"
     static let popularMovieList = BaseAPI + "movie/popular"
     static let filteredMovieList = BaseAPI + "discover/movie"
+    static let movieDetail = BaseAPI + "movie"
   }
   
   // Config & Param Keys
@@ -41,6 +43,7 @@ struct Constants {
     case genre
     case popularMoviesList
     case filteredMovieList
+    case movieDetail
     
     var urlString: String {
       switch self {
@@ -50,6 +53,8 @@ struct Constants {
         return Constants.APIPath.popularMovieList
       case .filteredMovieList:
         return Constants.APIPath.filteredMovieList
+      case .movieDetail:
+        return Constants.APIPath.movieDetail
       }
     }
   }

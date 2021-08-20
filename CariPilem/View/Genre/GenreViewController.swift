@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 protocol GenreDelegate {
-  func genreSelected(id: Int?, endpoint: Constants.Endpoint)
+  func genreSelected(id: Int?, value: String, endpoint: Constants.Endpoint)
 }
 
 class GenreViewController: UIViewController {
@@ -101,11 +101,12 @@ extension GenreViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch indexPath.section{
     case 0:
-      //let category = genres[indexPath.row]
-      delegate?.genreSelected(id: nil, endpoint: .popularMoviesList)
+      tableView.deselectRow(at: indexPath, animated: true)
+      delegate?.genreSelected(id: nil, value: specialCategory[indexPath.row], endpoint: .popularMoviesList)
     case 1:
+      tableView.deselectRow(at: indexPath, animated: true)
       let genre = genres[indexPath.row]
-      delegate?.genreSelected(id: genre.id, endpoint: .filteredMovieList)
+      delegate?.genreSelected(id: genre.id, value: genre.name, endpoint: .filteredMovieList)
     default:
       return
     }

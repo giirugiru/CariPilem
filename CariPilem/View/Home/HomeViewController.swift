@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
   var movieListViewModel: MovieListViewModel!
   var page = 1
   var genreId: Int?
+  var genreValue: String = "Popular Movies"
   var endpoint: Constants.Endpoint = .popularMoviesList
   
   private let networking = Networking()
@@ -24,14 +25,18 @@ class HomeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    movieTableView.register(MovieTableViewCell.nib(), forCellReuseIdentifier: MovieTableViewCell.cellIdentifier)
-    movieTableView.dataSource = self
-    movieTableView.delegate = self
-    
+    setupTable()
     setupViewModel()
     fetchMovies()
     observeViewModel()
+  }
+  
+  private func setupTable(){
+    movieTableView.register(MovieTableViewCell.nib(), forCellReuseIdentifier: MovieTableViewCell.cellIdentifier)
+    movieTableView.dataSource = self
+    movieTableView.delegate = self
+    movieTableView.showsVerticalScrollIndicator = false
+    movieTableView.bounces = false
   }
   
   private func setupViewModel(){
@@ -58,28 +63,22 @@ class HomeViewController: UIViewController {
   }
   
   @IBAction func genreButtonTapped(_ sender: UIBarButtonItem) {
-    let vc = GenreViewController(nibName: "GenreViewController", bundle: nil)
+    let vc = GenreViewController(nibName: String(describing: GenreViewController.self), bundle: nil)
     vc.delegate = self
     self.navigationController?.present(vc, animated: true, completion: nil)
   }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return movies.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-//    let cell = tableView.dequeueReusableCell(withIdentifier: DashboardTableViewCell.cellIdentifier, for: indexPath) as! DashboardTableViewCell
-
     let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellIdentifier, for: indexPath) as! MovieTableViewCell
     let model = movies[indexPath.row]
     cell.configure(with: model)
-    
-//    let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-//    let movie = movies[indexPath.row]
-//    cell.textLabel?.text = movie.title
     return cell
   }
   
@@ -90,13 +89,27 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
       observeViewModel()
     }
   }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return genreValue
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    let model = movies[indexPath.row]
+    let vc = MovieDetailViewController(nibName: String(describing: MovieDetailViewController.self), bundle: nil)
+    vc.movieId = model.id
+    self.navigationController?.pushViewController(vc, animated: true)
+  }
+  
 }
 
 extension HomeViewController: GenreDelegate {
-  func genreSelected(id: Int?, endpoint: Constants.Endpoint) {
+  func genreSelected(id: Int?, value: String, endpoint: Constants.Endpoint) {
     page = 1
     genreId = id
     movies.removeAll()
+    genreValue = value
     
     movieListViewModel = MovieListViewModel(networking: networking, endpoint: endpoint)
     movieListViewModel.fetchMovieList(page: page, genreId: genreId)
