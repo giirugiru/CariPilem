@@ -11,12 +11,14 @@ import Kingfisher
 
 class MovieDetailViewController: UIViewController {
   
+  @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var posterImage: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var ratingLabel: UILabel!
   @IBOutlet weak var taglineLabel: UILabel!
   @IBOutlet weak var genreLabel: UILabel!
   @IBOutlet weak var detailTableView: UITableView!
+  @IBOutlet weak var detailTableHeight: NSLayoutConstraint!
   
   private var menuDetail = ["Summary", "View Trailer", "View Rating"]
   private let networking = Networking()
@@ -41,6 +43,12 @@ class MovieDetailViewController: UIViewController {
     setupTable()
   }
   
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    self.scrollView.layoutIfNeeded()
+    self.detailTableHeight.constant = self.detailTableView.contentSize.height
+  }
+  
   private func setupViewModel(){
     movieDetailViewModel = MovieDetailViewModel(networking: networking, endpoint: .movieDetail)
   }
@@ -49,6 +57,8 @@ class MovieDetailViewController: UIViewController {
     detailTableView.register(DetailMenuTableViewCell.nib(), forCellReuseIdentifier: DetailMenuTableViewCell.cellIdentifier)
     detailTableView.delegate = self
     detailTableView.dataSource = self
+    detailTableView.rowHeight = UITableView.automaticDimension
+    detailTableView.estimatedRowHeight = 44.0
   }
   
   private func fetchMovie(){
@@ -67,6 +77,7 @@ class MovieDetailViewController: UIViewController {
     }, receiveValue: { (resultWelcome) in
       DispatchQueue.main.async {
         self.movie = resultWelcome
+        self.detailTableView.reloadData()
       }
     })
   }
@@ -87,6 +98,11 @@ class MovieDetailViewController: UIViewController {
 }
 
 extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource {
+  
+//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    return 150
+//  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return menuDetail.count
   }
@@ -96,6 +112,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     cell.menuTitleLabel.text = menuDetail[indexPath.row]
     switch indexPath.row {
     case 0:
+      cell.subtitleLabel.isHidden = false
       cell.selectionStyle = .none
       cell.subtitleLabel.text = movie?.overview
     default:
