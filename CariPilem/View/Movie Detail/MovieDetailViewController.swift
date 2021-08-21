@@ -20,6 +20,7 @@ class MovieDetailViewController: UIViewController {
   @IBOutlet weak var overviewLabel: UILabel!
   
   @IBOutlet weak var reviewButton: UIButton!
+  @IBOutlet weak var trailerButton: UIButton!
   
   private var menuDetail = ["Summary", "View Trailer", "View Rating"]
   private let networking = Networking()

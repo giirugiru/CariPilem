@@ -17,6 +17,7 @@
                 <outlet property="scrollView" destination="pf6-2O-2Ci" id="IsS-aK-Ipi"/>
                 <outlet property="taglineLabel" destination="PtU-lP-Wez" id="EYc-pV-iOD"/>
                 <outlet property="titleLabel" destination="aQD-BV-6KF" id="rf7-O8-z9W"/>
+                <outlet property="trailerButton" destination="6Hb-yl-did" id="bnr-hH-qx0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
