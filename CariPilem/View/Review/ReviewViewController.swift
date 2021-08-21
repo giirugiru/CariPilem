@@ -59,7 +59,12 @@ class ReviewViewController: UIViewController {
         if let result = resultWelcome.results {
           self.reviews = result
         }
+        self.reviewTableView.restore(style: .singleLine)
         self.reviewTableView.reloadData()
+        
+        if self.reviewTableView.visibleCells.count == 0 {
+          self.reviewTableView.setEmptyMessage("No Reviews Yet. Why not make one?\nNot here though.")
+        }
       }
     })
   }
@@ -75,7 +80,6 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: ReviewTableViewCell.cellIdentifier, for: indexPath) as! ReviewTableViewCell
     let model = reviews[indexPath.row]
     cell.configure(with: model)
-    
     return cell
   }
   

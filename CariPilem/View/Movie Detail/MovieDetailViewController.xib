@@ -147,6 +147,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <state key="normal" title="Watch Trailer"/>
+                                    <connections>
+                                        <action selector="trailerButtonTapped:" destination="-1" eventType="touchUpInside" id="Ea4-In-doL"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

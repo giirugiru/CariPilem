@@ -51,7 +51,5 @@ class MovieTableViewCell: UITableViewCell {
       guard let imageURL = URL(string: Constants.APIPath.BaseImageURL + path) else { return }
       posterImage.kf.setImage(with: imageURL)
     }
-    
   }
-  
 }

@@ -26,11 +26,15 @@ class MovieDetailViewController: UIViewController {
   private var subscriber: AnyCancellable?
   
   var movieId: Int?
+  var trailer: VideoResult?
   var movieDetailViewModel: MovieDetailViewModel!
   var movie: MovieDetailWelcome? {
     didSet {
       if let data = movie {
         layoutView(model: data)
+        if let video = data.videos?.results?.first {
+          trailer = video
+        }
       }
     }
   }
@@ -108,6 +112,15 @@ class MovieDetailViewController: UIViewController {
     let vc = ReviewViewController(nibName: String(describing: ReviewViewController.self), bundle: nil)
     vc.movieId = movieId
     navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  @IBAction func trailerButtonTapped(_ sender: UIButton) {
+    if let key = trailer?.key {
+      guard let trailerUrl = URL(string: Constants.YoutubePath.Path + key ) else { return }
+      UIApplication.shared.open(trailerUrl)
+    } else {
+      showAlert(withTitle: "No Trailer Found", withMessage: "This movie doesn't have a trailer yet. Why not make one? :)")
+    }
   }
   
 }

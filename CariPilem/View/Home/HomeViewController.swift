@@ -53,13 +53,21 @@ class HomeViewController: UIViewController {
       switch resultCompletion {
       case .failure(let error):
         print(error.localizedDescription)
+        self.showAlert(withTitle: "Unknown error occured", withMessage: "Please check your connection and try again")
+        DispatchQueue.main.async {
+          self.movieTableView.setEmptyMessage("No Movies Found")
+        }
       default: break
       }
     }, receiveValue: { (resultWelcome) in
       DispatchQueue.main.async {
         self.maxPage = resultWelcome.totalPages
         self.movies.append(contentsOf: resultWelcome.results)
+        self.movieTableView.restore(style: .singleLine)
         self.movieTableView.reloadData()
+        if self.movieTableView.visibleCells.count == 0 {
+          self.movieTableView.setEmptyMessage("No Movies Found")
+        }
       }
     })
   }
@@ -113,7 +121,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     vc.movieId = model.id
     self.navigationController?.pushViewController(vc, animated: true)
   }
-  
 }
 
 extension HomeViewController: GenreDelegate {
@@ -121,6 +128,7 @@ extension HomeViewController: GenreDelegate {
     page = 1
     genreId = id
     movies.removeAll()
+    movieTableView.reloadData()
     genreValue = value
     
     movieListViewModel = MovieListViewModel(networking: networking, endpoint: endpoint)

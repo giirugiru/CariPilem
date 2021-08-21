@@ -27,6 +27,10 @@ struct Constants {
     static let movieTrailer = BaseAPI + "movie/$$$/videos"
   }
   
+  struct YoutubePath {
+    static let Path = "https://www.youtube.com/watch?v="
+  }
+  
   // Config & Param Keys
   struct Language {
     static let Key = "language"
@@ -39,6 +43,11 @@ struct Constants {
   
   struct Genre {
     static let Key = "with_genres"
+  }
+  
+  struct Trailer {
+    static let Key = "append_to_response"
+    static let Value = "videos"
   }
   
   enum Endpoint {

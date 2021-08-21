@@ -26,10 +26,8 @@ class GenreViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     genreTableView.delegate = self
     genreTableView.dataSource = self
-        
     setupViewModel()
     fetchGenre()
     observeViewModel()

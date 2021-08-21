@@ -27,6 +27,7 @@ class MovieDetailViewModel {
     let param = [
       Constants.APIKey.Key: Constants.APIKey.Value,
       Constants.Language.Key: Constants.Language.Value,
+      Constants.Trailer.Key: Constants.Trailer.Value
     ]
     
     networking.fetchItems(url: url, parameters: param) { [weak self] (result: Result<MovieDetailWelcome, Error>) in

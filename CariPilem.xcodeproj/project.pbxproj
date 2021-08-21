@@ -14,6 +14,7 @@
 		BA079E4826CFC247006E1EE2 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA079E4626CFC247006E1EE2 /* ReviewTableViewCell.xib */; };
 		BA079E4A26CFC469006E1EE2 /* MovieReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA079E4926CFC469006E1EE2 /* MovieReviewViewModel.swift */; };
 		BA079E4C26CFC488006E1EE2 /* MovieReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA079E4B26CFC488006E1EE2 /* MovieReviewModel.swift */; };
+		BA079E5326D0740B006E1EE2 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA079E5226D0740B006E1EE2 /* Extension.swift */; };
 		BAAB66FC26CCD6D900CC0C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FB26CCD6D900CC0C6C /* AppDelegate.swift */; };
 		BAAB66FE26CCD6D900CC0C6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FD26CCD6D900CC0C6C /* SceneDelegate.swift */; };
 		BAAB670026CCD6D900CC0C6C /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB66FF26CCD6D900CC0C6C /* GenreViewController.swift */; };
@@ -44,6 +45,7 @@
 		BA079E4626CFC247006E1EE2 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		BA079E4926CFC469006E1EE2 /* MovieReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewViewModel.swift; sourceTree = "<group>"; };
 		BA079E4B26CFC488006E1EE2 /* MovieReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewModel.swift; sourceTree = "<group>"; };
+		BA079E5226D0740B006E1EE2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		BAAB66F826CCD6D900CC0C6C /* CariPilem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CariPilem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAAB66FB26CCD6D900CC0C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAAB66FD26CCD6D900CC0C6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		BA079E5126D073F7006E1EE2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BA079E5226D0740B006E1EE2 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		BAAB66EF26CCD6D900CC0C6C = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 				BAAB671726CCDE8E00CC0C6C /* Model */,
 				BAAB671626CCDE7C00CC0C6C /* Helpers */,
 				BAAB671126CCDCC200CC0C6C /* ViewModel */,
+				BA079E5126D073F7006E1EE2 /* Extension */,
 				BAAB670126CCD6D900CC0C6C /* Main.storyboard */,
 				BAAB670426CCD6DC00CC0C6C /* Assets.xcassets */,
 				BAAB670626CCD6DC00CC0C6C /* LaunchScreen.storyboard */,
@@ -214,10 +225,10 @@
 		BAAB671A26CCF26600CC0C6C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA079E3F26CFC1A6006E1EE2 /* Review */,
 				BA079E3726CF9EE0006E1EE2 /* Home */,
 				BA079E3826CF9EF4006E1EE2 /* Genre */,
 				BA079E3926CF9F00006E1EE2 /* Movie Detail */,
+				BA079E3F26CFC1A6006E1EE2 /* Review */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +375,7 @@
 				BAAB671026CCDB3100CC0C6C /* Networking.swift in Sources */,
 				BAAB671526CCDE1300CC0C6C /* Constants.swift in Sources */,
 				BAAB671926CCDE9D00CC0C6C /* MovieGenreModel.swift in Sources */,
+				BA079E5326D0740B006E1EE2 /* Extension.swift in Sources */,
 				BAAB672B26CE259100CC0C6C /* MovieTableViewCell.swift in Sources */,
 				BAAB672026CD0B7E00CC0C6C /* MovieListViewModel.swift in Sources */,
 				BA079E4C26CFC488006E1EE2 /* MovieReviewModel.swift in Sources */,
@@ -516,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PWC92C5B75;
+				DEVELOPMENT_TEAM = 32X45S4RAU;
 				INFOPLIST_FILE = CariPilem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -536,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PWC92C5B75;
+				DEVELOPMENT_TEAM = 32X45S4RAU;
 				INFOPLIST_FILE = CariPilem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

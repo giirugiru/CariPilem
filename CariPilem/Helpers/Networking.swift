@@ -30,7 +30,7 @@ class Networking: NetworkProtocol {
         }
       }, receiveValue: { (resultArray) in
         completion(.success(resultArray))
-        //print("Result: \(resultArray)")
+        print("Response: \(resultArray)")
       }).store(in: &subscribers)
   }
 }
