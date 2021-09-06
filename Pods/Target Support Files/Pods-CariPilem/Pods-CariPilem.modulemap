@@ -1,0 +1,6 @@
+framework module Pods_CariPilem {
+  umbrella header "Pods-CariPilem-umbrella.h"
+
+  export *
+  module * { export * }
+}

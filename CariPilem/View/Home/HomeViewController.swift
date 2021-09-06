@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var genreTabButton: UIBarButtonItem!
   
   var movies: [MovieList] = []
-  var movieListViewModel: MovieListViewModel!
+  var movieListViewModel: MovieListViewModel?
   var page = 1
   var maxPage: Int?
   var genreId: Int?
@@ -45,11 +45,11 @@ class HomeViewController: UIViewController {
   }
   
   private func fetchMovies(){
-    movieListViewModel.fetchMovieList(page: page, genreId: genreId)
+    movieListViewModel?.fetchMovieList(page: page, genreId: genreId)
   }
   
   private func observeViewModel(){
-    subscriber = movieListViewModel.movieListSubject.sink(receiveCompletion: { (resultCompletion) in
+    subscriber = movieListViewModel?.movieListSubject.sink(receiveCompletion: { (resultCompletion) in
       switch resultCompletion {
       case .failure(let error):
         print(error.localizedDescription)
@@ -103,7 +103,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
       page += 1
       if let max = maxPage {
         if page < max {
-          movieListViewModel.fetchMovieList(page: page, genreId: genreId)
+          movieListViewModel?.fetchMovieList(page: page, genreId: genreId)
           observeViewModel()
         }
       }
@@ -132,7 +132,7 @@ extension HomeViewController: GenreDelegate {
     genreValue = value
     
     movieListViewModel = MovieListViewModel(networking: networking, endpoint: endpoint)
-    movieListViewModel.fetchMovieList(page: page, genreId: genreId)
+    movieListViewModel?.fetchMovieList(page: page, genreId: genreId)
     observeViewModel()
   }
 }

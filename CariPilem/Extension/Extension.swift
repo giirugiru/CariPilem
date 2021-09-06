@@ -38,3 +38,11 @@ extension  UIViewController {
     })
   }
 }
+
+
+// Buat readme di repo
+// 1. Definisi & Kegunaan @escaping
+// 2. Convert 1 modul ke VIPER
+// 3. Definisi Protocol
+// 4. Scrollview perbedaan framelayout & contentlayout guide
+// 5. Play video (from youtube URL) natively

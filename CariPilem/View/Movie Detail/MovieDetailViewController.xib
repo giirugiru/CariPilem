@@ -157,11 +157,13 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="3AM-jt-iK9" secondAttribute="trailing" id="1go-Xj-hG5"/>
-                        <constraint firstItem="3AM-jt-iK9" firstAttribute="centerX" secondItem="pf6-2O-2Ci" secondAttribute="centerX" id="BcO-tM-cgA"/>
                         <constraint firstItem="3AM-jt-iK9" firstAttribute="leading" secondItem="pf6-2O-2Ci" secondAttribute="leading" id="ga5-vd-nz0"/>
+                        <constraint firstItem="3AM-jt-iK9" firstAttribute="width" secondItem="pf6-2O-2Ci" secondAttribute="width" id="qQC-Rd-7YI"/>
                         <constraint firstAttribute="bottom" secondItem="3AM-jt-iK9" secondAttribute="bottom" id="rEQ-2X-Rt1"/>
                         <constraint firstItem="3AM-jt-iK9" firstAttribute="top" secondItem="pf6-2O-2Ci" secondAttribute="top" id="wYM-Il-Uvf"/>
                     </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="spR-fJ-3TY"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="OXp-Kp-RGN"/>
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

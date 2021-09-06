@@ -35,6 +35,11 @@
 		BAAB673026CE96F400CC0C6C /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAB672E26CE96F400CC0C6C /* MovieDetailViewController.xib */; };
 		BAAB673226CF8C8500CC0C6C /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB673126CF8C8500CC0C6C /* MovieDetailViewModel.swift */; };
 		BAAB673426CF8CCA00CC0C6C /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB673326CF8CCA00CC0C6C /* MovieDetailModel.swift */; };
+		BAB12DE626E1FBF10045E938 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB12DE526E1FBF10045E938 /* Interactor.swift */; };
+		BAB12DE826E1FC020045E938 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB12DE726E1FC020045E938 /* Presenter.swift */; };
+		BAB12DEA26E1FC0A0045E938 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB12DE926E1FC0A0045E938 /* Entity.swift */; };
+		BAB12DEC26E1FC110045E938 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB12DEB26E1FC110045E938 /* Router.swift */; };
+		BAB12DEF26E5C39C0045E938 /* ReviewViperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB12DED26E5C39C0045E938 /* ReviewViperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +73,11 @@
 		BAAB672E26CE96F400CC0C6C /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		BAAB673126CF8C8500CC0C6C /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		BAAB673326CF8CCA00CC0C6C /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
+		BAB12DE526E1FBF10045E938 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		BAB12DE726E1FC020045E938 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		BAB12DE926E1FC0A0045E938 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		BAB12DEB26E1FC110045E938 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BAB12DED26E5C39C0045E938 /* ReviewViperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViperViewController.swift; sourceTree = "<group>"; };
 		C90BAFB86FFD59BED85008FB /* Pods_CariPilem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CariPilem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8580E5646EEABA6F864381 /* Pods-CariPilem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CariPilem.release.xcconfig"; path = "Target Support Files/Pods-CariPilem/Pods-CariPilem.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +188,7 @@
 			children = (
 				BAAB66FB26CCD6D900CC0C6C /* AppDelegate.swift */,
 				BAAB66FD26CCD6D900CC0C6C /* SceneDelegate.swift */,
+				BAB12DDF26E1FBA70045E938 /* Review With Viper */,
 				BAAB671A26CCF26600CC0C6C /* View */,
 				BAAB671726CCDE8E00CC0C6C /* Model */,
 				BAAB671626CCDE7C00CC0C6C /* Helpers */,
@@ -240,6 +251,26 @@
 				BAAB672A26CE259100CC0C6C /* MovieTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		BAB12DDF26E1FBA70045E938 /* Review With Viper */ = {
+			isa = PBXGroup;
+			children = (
+				BAB12DE426E1FBE00045E938 /* View */,
+				BAB12DE526E1FBF10045E938 /* Interactor.swift */,
+				BAB12DE726E1FC020045E938 /* Presenter.swift */,
+				BAB12DE926E1FC0A0045E938 /* Entity.swift */,
+				BAB12DEB26E1FC110045E938 /* Router.swift */,
+			);
+			path = "Review With Viper";
+			sourceTree = "<group>";
+		};
+		BAB12DE426E1FBE00045E938 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAB12DED26E5C39C0045E938 /* ReviewViperViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAAB671E26CD09C900CC0C6C /* MovieListModel.swift in Sources */,
+				BAB12DEF26E5C39C0045E938 /* ReviewViperViewController.swift in Sources */,
 				BAAB670026CCD6D900CC0C6C /* GenreViewController.swift in Sources */,
 				BA079E4A26CFC469006E1EE2 /* MovieReviewViewModel.swift in Sources */,
 				BA079E4226CFC1BF006E1EE2 /* ReviewViewController.swift in Sources */,
@@ -370,9 +402,13 @@
 				BAAB672F26CE96F400CC0C6C /* MovieDetailViewController.swift in Sources */,
 				BAAB673226CF8C8500CC0C6C /* MovieDetailViewModel.swift in Sources */,
 				BAAB671C26CCF84900CC0C6C /* HomeViewController.swift in Sources */,
+				BAB12DEA26E1FC0A0045E938 /* Entity.swift in Sources */,
 				BAAB66FE26CCD6D900CC0C6C /* SceneDelegate.swift in Sources */,
 				BA079E4726CFC247006E1EE2 /* ReviewTableViewCell.swift in Sources */,
+				BAB12DE826E1FC020045E938 /* Presenter.swift in Sources */,
+				BAB12DE626E1FBF10045E938 /* Interactor.swift in Sources */,
 				BAAB671026CCDB3100CC0C6C /* Networking.swift in Sources */,
+				BAB12DEC26E1FC110045E938 /* Router.swift in Sources */,
 				BAAB671526CCDE1300CC0C6C /* Constants.swift in Sources */,
 				BAAB671926CCDE9D00CC0C6C /* MovieGenreModel.swift in Sources */,
 				BA079E5326D0740B006E1EE2 /* Extension.swift in Sources */,
